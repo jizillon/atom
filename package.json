@@ -76,7 +76,8 @@
     "typescript-simple": "1.0.0",
     "underscore-plus": "^1.6.6",
     "winreg": "^1.2.1",
-    "yargs": "^3.23.0"
+    "yargs": "^3.23.0",
+    "snyk": "^1.134.2"
   },
   "packageDependencies": {
     "atom-dark-syntax": "0.29.0",
@@ -175,7 +176,9 @@
   "private": true,
   "scripts": {
     "preinstall": "node -e 'process.exit(0)'",
-    "test": "node script/test"
+    "test": "node script/test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "standard": {
     "env": {
@@ -188,5 +191,6 @@
       "atom",
       "snapshotResult"
     ]
-  }
+  },
+  "snyk": true
 }
